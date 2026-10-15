@@ -1,0 +1,77 @@
+/* ==========================================================================
+   HOJA DE ESTILOS: proyectos.css (Estructura base original)
+   ========================================================================== */
+
+/* Vincula el archivo style.css base para heredar las fuentes, variables y el header */
+@import url("./style.css");
+
+/* Espaciado superior para el título de la página */
+.titulo_main {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--black1);
+    color: white;
+}
+
+/* Contenedor principal de las tarjetas de proyectos */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+
+/* Estructura individual de cada tarjeta de proyecto */
+.card-container .card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover sobre las tarjetas */
+.card-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+/* Estilos para los iconos dentro de las tarjetas */
+.card-container .card i {
+    font-size: 2.5rem;
+    color: var(--gold1);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Título del proyecto */
+.card-container .card h1 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--black1);
+    font-weight: 700;
+}
+
+/* Descripción del proyecto */
+.card-container .card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilos para el pie de página secundario dentro de la vista de proyectos */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--black1);
+    color: var(--gray1);
+    width: 100%;
+}

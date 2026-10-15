@@ -1,0 +1,156 @@
+@import url("https://googleapis.com");
+
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================================================== */
+:root {
+  --gold1: #f4bd76;
+  --gold2: #f6cd8f;
+  --gray1: #ffffff80;
+  --gray2: #f7d9d990;
+  --black1: #1a1b1f;
+  --black2: #30553b; /* Tu color verde oscuro principal */
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth; /* Hace que el deslizamiento sea suave */
+}
+
+body {
+  font-family: "Roboto Serif", serif;
+  background-color: white;
+  color: var(--black2);
+  line-height: 1.6;
+}
+
+/* Contenedor Global Inteligente */
+
+/* El punto de color oro decorativo */
+.punto {
+  color: var(--gold1);
+}
+
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN (HEADER)
+   ========================================================================== */
+.hero {
+  width: 100%;
+  background-color: var(--black1); /* Fondo oscuro elegante */
+  color: white;
+}
+
+.nav_hero {
+  background-color: rgba(26, 27, 31, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0px 50px;
+}
+
+.logo_name h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+
+.links a {
+  color: var(--gray1);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--gold1);
+}
+/* Contenedor flexible principal */
+.contacto-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centra verticalmente los textos con el formulario */
+  gap: 60px; /* Espacio de separación entre la izquierda y la derecha */
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo de la sección */
+  margin: 0 auto; /* Centra todo el bloque en la pantalla */
+  padding: 60px 20px;
+}
+
+/* Forzamos que cada columna intente ocupar la mitad del espacio */
+.hero_textos {
+  flex: 1;
+  text-align: left; /* Asegura que tus frases miren a la izquierda */
+}
+
+.container-formulario {
+  flex: 1;
+  width: 100%;
+  border: 5px solid var(--black2);
+  border-radius: 10px;
+  padding: 50px;
+}
+
+/* Estilos de organización internos para tus etiquetas de formulario */
+.container-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container-formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (Para celulares y pantallas chicas)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .contacto-wrapper {
+    flex-direction: column; /* Apila el texto arriba y el formulario abajo */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero_textos {
+    text-align: center; /* Centra los textos en pantallas de celular */
+  }
+}
+.cta {
+    display: inline-block;
+    background-color: var(--gold1);
+    color: var(--black1);
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: var(--gold2);
+    transform: translateY(-3px);
+
+}

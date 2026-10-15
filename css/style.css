@@ -1,0 +1,396 @@
+@import url("https://googleapis.com");
+
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================================================== */
+:root {
+  --gold1: #f4bd76;
+  --gold2: #f6cd8f;
+  --gray1: #ffffff80;
+  --gray2: #f7d9d990;
+  --black1: #1a1b1f;
+  --black2: #30553b; /* Tu color verde oscuro principal */
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth; /* Hace que el deslizamiento sea suave */
+}
+
+body {
+  font-family: "Roboto Serif", serif;
+  background-color: #fafafa;
+  color: var(--black1);
+  line-height: 1.6;
+}
+
+/* Contenedor Global Inteligente */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0; /* Padding estándar para separar secciones */
+}
+
+/* El punto de color oro decorativo */
+.punto {
+  color: var(--gold1);
+}
+
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN (HEADER)
+   ========================================================================== */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--black1); /* Fondo oscuro elegante */
+  color: white;
+}
+
+.nav_hero {
+  background-color: rgba(26, 27, 31, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo_name h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.links a {
+  color: var(--gray1);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--gold1);
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO (PRINCIPAL)
+   ========================================================================== */
+.hero_main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: calc(100vh - 80px); /* Resta la barra de navegación */
+  padding: 40px 0 !important;
+}
+
+.hero_textos {
+  flex: 1;
+  max-width: 550px;
+}
+
+.titulo {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.titulo_activo {
+  color: var(--gold1);
+}
+
+.copia {
+  font-size: 1.1rem;
+  color: var(--gray1);
+  margin-bottom: 35px;
+}
+
+.copia_activa {
+  color: white;
+  font-weight: 600;
+}
+
+/* Botón de Llamada a la Acción (CTA) */
+.cta {
+  display: inline-block;
+  background-color: var(--gold1);
+  color: var(--black1);
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: var(--gold2);
+  transform: translateY(-3px);
+}
+
+.hero_img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero_img img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 10px 20px rgb(244, 189, 118));
+}
+
+/* ==========================================================================
+   4. SECCIÓN SERVICIOS
+   ========================================================================== */
+.servicios {
+  background-color: whitesmoke;
+}
+
+.subtitulo {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.copia_seccion {
+  text-align: center;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* Grid de Tarjetas */
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15 rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.card_img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card_texto {
+  padding: 25px;
+}
+
+.card_lista {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--black2); /* Tu color verde */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.card_titulo {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.card_copia {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.card_button {
+  display: inline-block;
+  color: var(--black1);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 2px solid var(--gold1);
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.card_button:hover {
+  color: var(--gold1);
+}
+
+/* ==========================================================================
+   5. SECCIÓN TESTIMONIOS
+   ========================================================================== */
+.testimonios {
+  background-color: var(--black2); /* Fondo verde corporativo */
+  color: white;
+}
+
+.testimonios .subtitulo {
+  color: white;
+}
+
+.testimonios .copia_seccion {
+  color: var(--gray2);
+}
+
+.testimonios_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.testimonio_card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonio_img {
+  width: 20vh;
+  height: auto;
+  border-radius: 12%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid var(--gold1);
+}
+
+.testimonio_logo {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--gold1);
+  margin-bottom: 15px;
+}
+
+.testimonio_name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.testimonio_posicion {
+  font-size: 0.85rem;
+  color: var(--gray1);
+}
+
+.scroll-btn-pure-css {
+  left: calc(100vh - 80vh); /* Lo empuja hacia el extremo derecho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+
+  /* Diseño del botón */
+  width: 50px;
+  height: 50px;
+  background-color: var(--gray2);
+  color: var(--black2);
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto hover */
+.scroll-btn-pure-css:hover {
+  background-color: var(--gold1);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   6. DISEÑO RESPONSIVO (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero_main {
+    flex-direction: column-reverse; /* Envía la imagen arriba en teléfonos */
+    text-align: center;
+  }
+
+  .hero_textos {
+    max-width: 100%;
+  }
+
+  .titulo {
+    font-size: 2.2rem;
+  }
+
+  .links {
+    display: none; /* Idealmente aquí hacer un menú hamburguesa */
+  }
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  min-height: 50vh;
+  background-color: var(--black1);
+  color: var(--gray1);
+}
+.container_footer {
+  display: flex;
+  padding: 50px;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  align-items: baseline;
+  gap: 50px;
+}
+.icono_rs {
+  border-radius: var(--gold2);
+  min-height: min-content;
+}
+
+.container_datos {
+  display: flex;
+  flex-direction: column;
+}
+.maps iframe {
+  width: 100%;
+  height: 20vh;
+  border-radius: 10px;
+}
