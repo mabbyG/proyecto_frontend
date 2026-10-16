@@ -321,14 +321,13 @@ body {
   justify-content: center;
   border-radius: 6px;
   transition:
-    transform 0.3s ease,
-    background-color 0.3s ease;
+  transform 0.3s ease,
+  background-color 0.3s ease;
 
   /* Diseño del botón */
   width: 50px;
   height: 50px;
   background-color: var(--gray2);
-  color: var(--black2);
   text-decoration: none;
   border-radius: 50%;
   font-size: 20px;
@@ -340,6 +339,7 @@ body {
   background-color: var(--gold1);
   transform: scale(1.1);
 }
+
 
 /* ==========================================================================
    6. DISEÑO RESPONSIVO (MOBILE)
@@ -362,33 +362,63 @@ body {
     display: none; /* Idealmente aquí hacer un menú hamburguesa */
   }
 }
+/*===============================footer===============
+==*/
 
-.footer {
+.container_footer {
+
   display: flex;
   width: 100%;
-  min-height: 50vh;
+  height: auto;
   background-color: var(--black1);
-  color: var(--gray1);
-}
-.container_footer {
-  display: flex;
-  padding: 50px;
-  margin: auto;
+  color: var(--gray2);
+  padding: 20px;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: space-evenly;
-  align-items: baseline;
-  gap: 50px;
+  align-content: space-between;
+  align-items:baseline;
+  gap: 90px;
+ justify-content: space-around;
+
+ }
+
+.redes_sociales {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    flex-direction:column;
+    align-items:center;
+     
 }
-.icono_rs {
-  border-radius: var(--gold2);
-  min-height: min-content;
+.rrss_iconos {
+    display: flex;
+    flex-direction:row; 
+    gap: 30px; 
+    
+}
+.social_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-.container_datos {
-  display: flex;
-  flex-direction: column;
+/* Efecto hover opcional */
+.social_link:hover {
+    transform: translateY(-5px);
+    
 }
+
+.container_telefonos {
+  display: flex;
+ flex-direction: column;
+}
+.numeros_tel{
+ display: flex;
+    flex-direction:column; 
+    gap: 10px; 
+     
+}
+
 .maps iframe {
   width: 100%;
   height: 20vh;

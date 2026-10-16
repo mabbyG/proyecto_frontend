@@ -1,4 +1,7 @@
-@import url("https://googleapis.com");
+
+/* Vinculo el archivo style.css base para heredar las fuentes, variables footer y el header */
+
+@import url("../css/style.css");
 
 /* ==========================================================================
    1. VARIABLES Y CONFIGURACIÓN GLOBAL
@@ -43,6 +46,7 @@ body {
   width: 100%;
   background-color: var(--black1); /* Fondo oscuro elegante */
   color: white;
+  height: 10%;
 }
 
 .nav_hero {

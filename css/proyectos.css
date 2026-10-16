@@ -2,8 +2,8 @@
    HOJA DE ESTILOS: proyectos.css (Estructura base original)
    ========================================================================== */
 
-/* Vincula el archivo style.css base para heredar las fuentes, variables y el header */
-@import url("./style.css");
+/* Vinculo el archivo style.css base para heredar las fuentes, variables footer y el header */
+@import url("../css/style.css");
 
 /* Espaciado superior para el título de la página */
 .titulo_main {
